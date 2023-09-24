@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row row-cols-1 row-cols-lg-2 g-4">
+        {% for department in dep %}
+        <div class="col">
+            <div class="card">
+                <img src="{{ department.upload }}" class="card-img-top" alt="{{ department.dep_name }}"/>
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">{{ department.dep_name }}</h5>
+                    <p class="card-text">
+                        {{ department.dep_description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

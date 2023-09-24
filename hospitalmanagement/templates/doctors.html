@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Doctors{% endblock %}
+
+{% block content %}
+
+<h2 class="font-weight-bold mb-2 mt-2">Our Doctors</h2>
+<div class="row pb-5 mb-4 mt-2">
+    {% for doctors in doc %}
+    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 ">
+        <div class="card shadow-sm border-0 rounded ">
+            <div class="card-body p-0"><img src="{{doctors.doc_image.url}}" alt="" class="w-100 card-img-top">
+                <div class="p-4">
+                    <h5 class="mb-0">{{doctors.doc_name}}</h5>
+                    <p class="small text-muted">{{doctors.doc_spec}}</p>
+                    <ul class="social mb-0 list-inline mt-3">
+                        <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                        <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+
+
+
+{% endblock %}

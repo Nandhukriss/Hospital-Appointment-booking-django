@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+    <nav class="navbar navbar-expand-lg text-info" style="background-color: #1e74ad;">
+    
+        <div class="container-fluid ">
+          <a class="navbar-brand fs-4" href="#"><img src="{% static 'images/hospital-building.png' %}" alt="logo" height="30px" ></a>
+          <span class="text-white fs-5">City Hospital</span>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent" >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto fs-5 ">
+              <li class="nav-item text-light-emphasis mx-3">
+                <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item mx-3 hover ">
+                <a class="nav-link text-white " href="{% url 'about' %}">About</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link  text-white" href="{% url 'booking' %}">Booking</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link text-white" href="{% url 'doctors' %}">Doctors</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link text-white" href="{% url 'department' %}">Department</a>
+              </li>
+              <li class="nav-item mx-3">
+                <a class="nav-link text-white" href="{% url 'contact' %}">Contact Us</a>
+              </li>    
+            </ul>
+          </div>
+        </div>
+      </nav>
+    {% block content %}
+    
+    {% endblock %}
+    <div class="container-fluid " style="background-color: #1e74ad;">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+          <p class="col-md-12 col-12 mb-0 text-center text-white ">© 2023 Hospital, Inc</p>
+      
+     
+        </footer>
+      </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+crossorigin="anonymous"></script>
+</body>
+</html>
