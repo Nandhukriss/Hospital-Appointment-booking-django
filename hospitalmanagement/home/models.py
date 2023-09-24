@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone 
 
 # Create your models here
 
@@ -25,6 +26,6 @@ class Booking(models.Model):
     p_phone=models.CharField(max_length=10)
     p_email=models.EmailField()
     doc_name=models.ForeignKey(Doctors,on_delete=models.CASCADE)
-    booking_date=models.DateField 
-    booked_one=models.DateField(auto_now=True)
+    booking_date = models.DateField(default=timezone.now)
+    booked_on=models.DateField(auto_now=True)
 

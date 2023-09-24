@@ -10,11 +10,18 @@ def about(request):
    return render (request,'about.html')
 
 def booking(request):
-    form=BookingForm()
-    dic_form={
-        'form':form
-    }
-    return render (request,'booking.html',dic_form)
+    msg = None
+
+    if request.method == "POST":
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            msg = "Your Apointment Has been Confirmed"
+            return render(request, 'booking.html', {'form': form, 'msg': msg})
+    else:
+        form = BookingForm()
+
+    return render(request, 'booking.html', {'form': form, 'msg': msg})
 
 def doctors(request):
     doc_dict={
