@@ -130,6 +130,23 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
+# settings.py
+
+# Use SMTP as the email backend
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# Gmail SMTP server settings
+EMAIL_HOST = 'smtp.gmail.com'  # SMTP server address for Gmail
+EMAIL_PORT = 587  # SMTP server port for Gmail (587 is the default for TLS)
+EMAIL_USE_TLS = True  # Use TLS (True for Gmail)
+EMAIL_USE_SSL = False  # Use SSL (False for Gmail)
+
+# Your Gmail email address and password
+EMAIL_HOST_USER = 'nandhu.r.s.krishna@gmail.com'
+EMAIL_HOST_PASSWORD = 'ojrifeatfluujlaw' # Your Gmail email password
+
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
