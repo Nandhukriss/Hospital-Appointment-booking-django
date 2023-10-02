@@ -142,8 +142,8 @@ EMAIL_USE_TLS = True  # Use TLS (True for Gmail)
 EMAIL_USE_SSL = False  # Use SSL (False for Gmail)
 
 # Your Gmail email address and password
-EMAIL_HOST_USER = 'nandhu.r.s.krishna@gmail.com'
-EMAIL_HOST_PASSWORD = 'ojrifeatfluujlaw' # Your Gmail email password
+EMAIL_HOST_USER = 'Your Gmail'
+EMAIL_HOST_PASSWORD = 'Your Gmail email password' # 
 
 
 
